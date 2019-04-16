@@ -1,0 +1,1 @@
+2019-04-08 22:34:46,050 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos', 'listname': 'get请求返回resultcode不正确', 'key': 2.0, 'coneent': 'not argument', 'param_place': '', 'fangshi': 'GET', 'expect1': 'code=2011', 'expect2': 'param=null'}

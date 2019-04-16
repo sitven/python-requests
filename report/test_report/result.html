@@ -1,0 +1,883 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>接口自动化测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    
+<style type="text/css" media="screen">
+body        { font-family: Microsoft YaHei,Tahoma,arial,helvetica,sans-serif;padding: 20px; font-size: 80%; }
+table       { font-size: 100%; }
+
+/* -- heading ---------------------------------------------------------------------- */
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- report ------------------------------------------------------------------------ */
+#total_row  { font-weight: bold; }
+.passCase   { color: #5cb85c; }
+.failCase   { color: #d9534f; font-weight: bold; }
+.errorCase  { color: #f0ad4e; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+</style>
+
+</head>
+<body >
+<script language="javascript" type="text/javascript">
+output_list = Array();
+
+/*level 调整增加只显示通过用例的分类 --Findyou
+0:Summary //all hiddenRow
+1:Failed  //pt hiddenRow, ft none
+2:Pass    //pt none, ft hiddenRow
+3:All     //pt none, ft none
+*/
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level == 2 || level == 0 ) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level < 2) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+    }
+
+    //加入【详细】切换文字变化 --Findyou
+    detail_class=document.getElementsByClassName('detail');
+	//console.log(detail_class.length)
+	if (level == 3) {
+		for (var i = 0; i < detail_class.length; i++){
+			detail_class[i].innerHTML="收起"
+		}
+	}
+	else{
+			for (var i = 0; i < detail_class.length; i++){
+			detail_class[i].innerHTML="详细"
+		}
+	}
+}
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        //ID修改 点 为 下划线 -Findyou
+        tid0 = 't' + cid.substr(1) + '_' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        //修改点击无法收起的BUG，加入【详细】切换文字变化 --Findyou
+        if (toHide) {
+            document.getElementById(tid).className = 'hiddenRow';
+            document.getElementById(cid).innerText = "详细"
+        }
+        else {
+            document.getElementById(tid).className = '';
+            document.getElementById(cid).innerText = "收起"
+        }
+    }
+}
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+</script>
+<div class='heading'>
+<h2 style="font-family: Microsoft YaHei">接口自动化测试报告</h2>
+<p class='attribute'><strong>测试人员 : </strong> 命命</p>
+<p class='attribute'><strong>开始时间 : </strong> 2019-04-08 22:34:44</p>
+<p class='attribute'><strong>合计耗时 : </strong> 0:00:19.253536</p>
+<p class='attribute'><strong>测试结果 : </strong> 共 18，错误 18，通过率= 0.00%</p>
+
+<p class='description'></p>
+</div>
+
+
+
+<p id='show_detail_line'>
+<a class="btn btn-primary" href='javascript:showCase(0)'>通过率{ 0.00% }</a>
+<a class="btn btn-danger" href='javascript:showCase(1)'>失败{ 0 }</a>
+<a class="btn btn-success" href='javascript:showCase(2)'>通过{ 0 }</a>
+<a class="btn btn-info" href='javascript:showCase(3)'>所有{ 18 }</a>
+</p>
+<table id='result_table' class="table table-condensed table-bordered table-hover">
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row' class="text-center success" style="font-weight: bold;font-size: 14px;">
+    <td>用例集/测试用例</td>
+    <td>总计</td>
+    <td>通过</td>
+    <td>失败</td>
+    <td>错误</td>
+    <td>详细</td>
+</tr>
+
+<tr class='errorClass warning'>
+    <td>ddt_case.MyTest</td>
+    <td class="text-center">18</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">18</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c1',18)" class="detail" id='c1'>详细</a></td>
+</tr>
+
+<tr id='ft1_1' class='none'>
+    <td class='errorCase'><div class='testcase'>testCase_01: dict() -> new empty dictionary</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_1'>错误</button>
+    <div id='div_ft1_1' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_1'>错误</button>
+    <div style="text-align:left" id='div_ft1_1' class="collapse in">
+    <pre>
+    
+ft1_1: 2019-04-08 22:34:44,755 - root - INFO - 测试用例开始执行
+2019-04-08 22:34:44,756 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos', 'listname': 'get请求返回resultcode正确', 'key': 1.0, 'coneent': 'not argument', 'param_place': '', 'fangshi': 'GET', 'expect1': 'code=200', 'expect2': 'param=null'}
+2019-04-08 22:34:45,768 - root - ERROR - get请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos?not%20argument (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000239D28812B0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-08 22:34:45,768 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos,key:1.0,参数:not argument,请求方式：GET
+2019-04-08 22:34:45,768 - root - INFO - 测试用例执行完毕
+2019-04-08 22:34:45,769 - root - INFO - ----------------------------------
+Traceback (most recent call last):
+  File "G:\interface_python\testCase\ddt_case.py", line 35, in testCase
+    self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
+KeyError: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Program Files\Python\python36\lib\site-packages\ddt.py", line 145, in wrapper
+    return func(self, *args, **kwargs)
+  File "G:\interface_python\testCase\ddt_case.py", line 38, in testCase
+    Log().warning('对【code】断言,断言结果--预期值%s != 实际值%s' % (expect_one['code'], apijson[0]))
+KeyError: 0
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_2' class='none'>
+    <td class='errorCase'><div class='testcase'>testCase_02: dict() -> new empty dictionary</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_2' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_2'>错误</button>
+    <div id='div_ft1_2' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_2' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_2'>错误</button>
+    <div style="text-align:left" id='div_ft1_2' class="collapse in">
+    <pre>
+    
+ft1_2: 2019-04-08 22:34:45,786 - root - INFO - 测试用例开始执行
+2019-04-08 22:34:46,050 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos', 'listname': 'get请求返回resultcode不正确', 'key': 2.0, 'coneent': 'not argument', 'param_place': '', 'fangshi': 'GET', 'expect1': 'code=2011', 'expect2': 'param=null'}
+2019-04-08 22:34:47,057 - root - ERROR - get请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos?not%20argument (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000239D28B7A58&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-08 22:34:47,057 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos,key:2.0,参数:not argument,请求方式：GET
+2019-04-08 22:34:47,058 - root - INFO - 测试用例执行完毕
+2019-04-08 22:34:47,058 - root - INFO - ----------------------------------
+Traceback (most recent call last):
+  File "G:\interface_python\testCase\ddt_case.py", line 35, in testCase
+    self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
+KeyError: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Program Files\Python\python36\lib\site-packages\ddt.py", line 145, in wrapper
+    return func(self, *args, **kwargs)
+  File "G:\interface_python\testCase\ddt_case.py", line 38, in testCase
+    Log().warning('对【code】断言,断言结果--预期值%s != 实际值%s' % (expect_one['code'], apijson[0]))
+KeyError: 0
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_3' class='none'>
+    <td class='errorCase'><div class='testcase'>testCase_03: dict() -> new empty dictionary</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_3' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_3'>错误</button>
+    <div id='div_ft1_3' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_3' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_3'>错误</button>
+    <div style="text-align:left" id='div_ft1_3' class="collapse in">
+    <pre>
+    
+ft1_3: 2019-04-08 22:34:47,059 - root - INFO - 测试用例开始执行
+2019-04-08 22:34:47,059 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos', 'listname': 'post请求返回resultcode和task正确', 'key': 3.0, 'coneent': '{"task":"fourth request"}', 'param_place': '', 'fangshi': 'POST', 'expect1': 'code=202', 'expect2': 'task=fourth request'}
+2019-04-08 22:34:48,065 - root - ERROR - post请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000239D28B74A8&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-08 22:34:48,066 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos,key:3.0,参数:{"task":"fourth request"},请求方式：POST
+2019-04-08 22:34:48,066 - root - INFO - 测试用例执行完毕
+2019-04-08 22:34:48,067 - root - INFO - ----------------------------------
+Traceback (most recent call last):
+  File "G:\interface_python\testCase\ddt_case.py", line 35, in testCase
+    self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
+KeyError: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Program Files\Python\python36\lib\site-packages\ddt.py", line 145, in wrapper
+    return func(self, *args, **kwargs)
+  File "G:\interface_python\testCase\ddt_case.py", line 38, in testCase
+    Log().warning('对【code】断言,断言结果--预期值%s != 实际值%s' % (expect_one['code'], apijson[0]))
+KeyError: 0
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_4' class='none'>
+    <td class='errorCase'><div class='testcase'>testCase_04: dict() -> new empty dictionary</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_4' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_4'>错误</button>
+    <div id='div_ft1_4' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_4' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_4'>错误</button>
+    <div style="text-align:left" id='div_ft1_4' class="collapse in">
+    <pre>
+    
+ft1_4: 2019-04-08 22:34:48,068 - root - INFO - 测试用例开始执行
+2019-04-08 22:34:48,069 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos/todo1', 'listname': 'put请求返回task不正确', 'key': 4.0, 'coneent': '{"task":"put success"}', 'param_place': '', 'fangshi': 'PUT', 'expect1': 'code=201', 'expect2': 'task=put succ'}
+2019-04-08 22:34:49,073 - root - ERROR - put请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos/todo1 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000239D28BFC88&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-08 22:34:49,074 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos/todo1,key:4.0,参数:{"task":"put success"},请求方式：PUT
+2019-04-08 22:34:49,075 - root - INFO - 测试用例执行完毕
+2019-04-08 22:34:49,075 - root - INFO - ----------------------------------
+Traceback (most recent call last):
+  File "G:\interface_python\testCase\ddt_case.py", line 35, in testCase
+    self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
+KeyError: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Program Files\Python\python36\lib\site-packages\ddt.py", line 145, in wrapper
+    return func(self, *args, **kwargs)
+  File "G:\interface_python\testCase\ddt_case.py", line 38, in testCase
+    Log().warning('对【code】断言,断言结果--预期值%s != 实际值%s' % (expect_one['code'], apijson[0]))
+KeyError: 0
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_5' class='none'>
+    <td class='errorCase'><div class='testcase'>testCase_05: dict() -> new empty dictionary</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_5' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_5'>错误</button>
+    <div id='div_ft1_5' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_5' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_5'>错误</button>
+    <div style="text-align:left" id='div_ft1_5' class="collapse in">
+    <pre>
+    
+ft1_5: 2019-04-08 22:34:49,076 - root - INFO - 测试用例开始执行
+2019-04-08 22:34:49,077 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos/todo2', 'listname': 'put请求返回resultcode和task正确', 'key': 5.0, 'coneent': '{"task":"update success"}', 'param_place': 'database', 'fangshi': 'PUT', 'expect1': 'code=201', 'expect2': 'task=update success'}
+G:\interface_python\config\readyaml.py:16: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  cf = load(cont)
+2019-04-08 22:34:49,081 - root - INFO - 当前接口涉及数据库：orderdb
+2019-04-08 22:34:49,326 - root - INFO - 成功登录数据库：orderdb，版本为：8.0.11，执行SQL：select content from blog_blog where id = '7'
+2019-04-08 22:34:49,375 - root - INFO - 查询结果：{"task":"update success"}
+2019-04-08 22:34:49,376 - root - INFO - 数据格式为：{"task":"update success"}
+2019-04-08 22:34:50,381 - root - ERROR - put请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos/todo2 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000239D28B76D8&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-08 22:34:50,382 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos/todo2,key:5.0,参数:{"task":"update success"},请求方式：PUT
+2019-04-08 22:34:50,382 - root - INFO - 测试用例执行完毕
+2019-04-08 22:34:50,383 - root - INFO - ----------------------------------
+Traceback (most recent call last):
+  File "G:\interface_python\testCase\ddt_case.py", line 35, in testCase
+    self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
+KeyError: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Program Files\Python\python36\lib\site-packages\ddt.py", line 145, in wrapper
+    return func(self, *args, **kwargs)
+  File "G:\interface_python\testCase\ddt_case.py", line 38, in testCase
+    Log().warning('对【code】断言,断言结果--预期值%s != 实际值%s' % (expect_one['code'], apijson[0]))
+KeyError: 0
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_6' class='none'>
+    <td class='errorCase'><div class='testcase'>testCase_06: dict() -> new empty dictionary</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_6' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_6'>错误</button>
+    <div id='div_ft1_6' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_6' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_6'>错误</button>
+    <div style="text-align:left" id='div_ft1_6' class="collapse in">
+    <pre>
+    
+ft1_6: 2019-04-08 22:34:50,384 - root - INFO - 测试用例开始执行
+2019-04-08 22:34:50,385 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos/todo1', 'listname': 'delete请求成功删除数据', 'key': 6.0, 'coneent': 'not argument', 'param_place': '', 'fangshi': 'DELETE', 'expect1': 'code=204', 'expect2': 'param=null'}
+2019-04-08 22:34:51,390 - root - ERROR - delete请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos/todo1?not%20argument (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000239D28BF2B0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-08 22:34:51,390 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos/todo1,key:6.0,参数:not argument,请求方式：DELETE
+2019-04-08 22:34:51,391 - root - INFO - 测试用例执行完毕
+2019-04-08 22:34:51,391 - root - INFO - ----------------------------------
+Traceback (most recent call last):
+  File "G:\interface_python\testCase\ddt_case.py", line 35, in testCase
+    self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
+KeyError: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Program Files\Python\python36\lib\site-packages\ddt.py", line 145, in wrapper
+    return func(self, *args, **kwargs)
+  File "G:\interface_python\testCase\ddt_case.py", line 38, in testCase
+    Log().warning('对【code】断言,断言结果--预期值%s != 实际值%s' % (expect_one['code'], apijson[0]))
+KeyError: 0
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_7' class='none'>
+    <td class='errorCase'><div class='testcase'>testCase_07: dict() -> new empty dictionary</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_7' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_7'>错误</button>
+    <div id='div_ft1_7' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_7' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_7'>错误</button>
+    <div style="text-align:left" id='div_ft1_7' class="collapse in">
+    <pre>
+    
+ft1_7: 2019-04-08 22:34:51,392 - root - INFO - 测试用例开始执行
+2019-04-08 22:34:51,393 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos', 'listname': 'get请求返回resultcode正确', 'key': 7.0, 'coneent': 'not argument', 'param_place': '', 'fangshi': 'GET', 'expect1': 'code=200', 'expect2': 'param=null'}
+2019-04-08 22:34:52,397 - root - ERROR - get请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos?not%20argument (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000239D28BFD68&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-08 22:34:52,398 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos,key:7.0,参数:not argument,请求方式：GET
+2019-04-08 22:34:52,398 - root - INFO - 测试用例执行完毕
+2019-04-08 22:34:52,399 - root - INFO - ----------------------------------
+Traceback (most recent call last):
+  File "G:\interface_python\testCase\ddt_case.py", line 35, in testCase
+    self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
+KeyError: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Program Files\Python\python36\lib\site-packages\ddt.py", line 145, in wrapper
+    return func(self, *args, **kwargs)
+  File "G:\interface_python\testCase\ddt_case.py", line 38, in testCase
+    Log().warning('对【code】断言,断言结果--预期值%s != 实际值%s' % (expect_one['code'], apijson[0]))
+KeyError: 0
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_8' class='none'>
+    <td class='errorCase'><div class='testcase'>testCase_08: dict() -> new empty dictionary</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_8' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_8'>错误</button>
+    <div id='div_ft1_8' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_8' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_8'>错误</button>
+    <div style="text-align:left" id='div_ft1_8' class="collapse in">
+    <pre>
+    
+ft1_8: 2019-04-08 22:34:52,400 - root - INFO - 测试用例开始执行
+2019-04-08 22:34:52,401 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos', 'listname': 'get请求返回resultcode不正确', 'key': 8.0, 'coneent': 'not argument', 'param_place': '', 'fangshi': 'GET', 'expect1': 'code=2011', 'expect2': 'param=null'}
+2019-04-08 22:34:53,404 - root - ERROR - get请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos?not%20argument (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000239D2896128&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-08 22:34:53,405 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos,key:8.0,参数:not argument,请求方式：GET
+2019-04-08 22:34:53,405 - root - INFO - 测试用例执行完毕
+2019-04-08 22:34:53,406 - root - INFO - ----------------------------------
+Traceback (most recent call last):
+  File "G:\interface_python\testCase\ddt_case.py", line 35, in testCase
+    self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
+KeyError: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Program Files\Python\python36\lib\site-packages\ddt.py", line 145, in wrapper
+    return func(self, *args, **kwargs)
+  File "G:\interface_python\testCase\ddt_case.py", line 38, in testCase
+    Log().warning('对【code】断言,断言结果--预期值%s != 实际值%s' % (expect_one['code'], apijson[0]))
+KeyError: 0
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_9' class='none'>
+    <td class='errorCase'><div class='testcase'>testCase_09: dict() -> new empty dictionary</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_9' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_9'>错误</button>
+    <div id='div_ft1_9' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_9' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_9'>错误</button>
+    <div style="text-align:left" id='div_ft1_9' class="collapse in">
+    <pre>
+    
+ft1_9: 2019-04-08 22:34:53,407 - root - INFO - 测试用例开始执行
+2019-04-08 22:34:53,408 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos', 'listname': 'post请求返回resultcode和task正确', 'key': 9.0, 'coneent': '{"task":"fourth request"}', 'param_place': '', 'fangshi': 'POST', 'expect1': 'code=202', 'expect2': 'task=fourth request'}
+2019-04-08 22:34:54,414 - root - ERROR - post请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000239D28A0FD0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-08 22:34:54,415 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos,key:9.0,参数:{"task":"fourth request"},请求方式：POST
+2019-04-08 22:34:54,416 - root - INFO - 测试用例执行完毕
+2019-04-08 22:34:54,416 - root - INFO - ----------------------------------
+Traceback (most recent call last):
+  File "G:\interface_python\testCase\ddt_case.py", line 35, in testCase
+    self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
+KeyError: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Program Files\Python\python36\lib\site-packages\ddt.py", line 145, in wrapper
+    return func(self, *args, **kwargs)
+  File "G:\interface_python\testCase\ddt_case.py", line 38, in testCase
+    Log().warning('对【code】断言,断言结果--预期值%s != 实际值%s' % (expect_one['code'], apijson[0]))
+KeyError: 0
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_10' class='none'>
+    <td class='errorCase'><div class='testcase'>testCase_10: dict() -> new empty dictionary</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_10' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_10'>错误</button>
+    <div id='div_ft1_10' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_10' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_10'>错误</button>
+    <div style="text-align:left" id='div_ft1_10' class="collapse in">
+    <pre>
+    
+ft1_10: 2019-04-08 22:34:54,418 - root - INFO - 测试用例开始执行
+2019-04-08 22:34:54,419 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos/todo1', 'listname': 'put请求返回task不正确', 'key': 10.0, 'coneent': '{"task":"put success"}', 'param_place': '', 'fangshi': 'PUT', 'expect1': 'code=201', 'expect2': 'task=put succ'}
+2019-04-08 22:34:55,425 - root - ERROR - put请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos/todo1 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000239D2896F98&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-08 22:34:55,425 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos/todo1,key:10.0,参数:{"task":"put success"},请求方式：PUT
+2019-04-08 22:34:55,425 - root - INFO - 测试用例执行完毕
+2019-04-08 22:34:55,426 - root - INFO - ----------------------------------
+Traceback (most recent call last):
+  File "G:\interface_python\testCase\ddt_case.py", line 35, in testCase
+    self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
+KeyError: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Program Files\Python\python36\lib\site-packages\ddt.py", line 145, in wrapper
+    return func(self, *args, **kwargs)
+  File "G:\interface_python\testCase\ddt_case.py", line 38, in testCase
+    Log().warning('对【code】断言,断言结果--预期值%s != 实际值%s' % (expect_one['code'], apijson[0]))
+KeyError: 0
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_11' class='none'>
+    <td class='errorCase'><div class='testcase'>testCase_11: dict() -> new empty dictionary</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_11' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_11'>错误</button>
+    <div id='div_ft1_11' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_11' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_11'>错误</button>
+    <div style="text-align:left" id='div_ft1_11' class="collapse in">
+    <pre>
+    
+ft1_11: 2019-04-08 22:34:55,427 - root - INFO - 测试用例开始执行
+2019-04-08 22:34:55,428 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos/todo2', 'listname': 'put请求返回resultcode和task正确', 'key': 11.0, 'coneent': '{"task":"update success"}', 'param_place': 'database', 'fangshi': 'PUT', 'expect1': 'code=201', 'expect2': 'task=update success'}
+2019-04-08 22:34:55,431 - root - INFO - 当前接口涉及数据库：orderdb
+2019-04-08 22:34:55,595 - root - INFO - 成功登录数据库：orderdb，版本为：8.0.11，执行SQL：select content from blog_blog where id = '7'
+2019-04-08 22:34:55,627 - root - INFO - 查询结果：{"task":"update success"}
+2019-04-08 22:34:55,628 - root - INFO - 数据格式为：{"task":"update success"}
+2019-04-08 22:34:56,702 - root - ERROR - put请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos/todo2 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000239D28BF7B8&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-08 22:34:56,703 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos/todo2,key:11.0,参数:{"task":"update success"},请求方式：PUT
+2019-04-08 22:34:56,703 - root - INFO - 测试用例执行完毕
+2019-04-08 22:34:56,704 - root - INFO - ----------------------------------
+Traceback (most recent call last):
+  File "G:\interface_python\testCase\ddt_case.py", line 35, in testCase
+    self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
+KeyError: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Program Files\Python\python36\lib\site-packages\ddt.py", line 145, in wrapper
+    return func(self, *args, **kwargs)
+  File "G:\interface_python\testCase\ddt_case.py", line 38, in testCase
+    Log().warning('对【code】断言,断言结果--预期值%s != 实际值%s' % (expect_one['code'], apijson[0]))
+KeyError: 0
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_12' class='none'>
+    <td class='errorCase'><div class='testcase'>testCase_12: dict() -> new empty dictionary</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_12' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_12'>错误</button>
+    <div id='div_ft1_12' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_12' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_12'>错误</button>
+    <div style="text-align:left" id='div_ft1_12' class="collapse in">
+    <pre>
+    
+ft1_12: 2019-04-08 22:34:56,705 - root - INFO - 测试用例开始执行
+2019-04-08 22:34:56,706 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos/todo1', 'listname': 'delete请求成功删除数据', 'key': 12.0, 'coneent': 'not argument', 'param_place': '', 'fangshi': 'DELETE', 'expect1': 'code=204', 'expect2': 'param=null'}
+2019-04-08 22:34:57,712 - root - ERROR - delete请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos/todo1?not%20argument (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000239D28967B8&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-08 22:34:57,712 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos/todo1,key:12.0,参数:not argument,请求方式：DELETE
+2019-04-08 22:34:57,712 - root - INFO - 测试用例执行完毕
+2019-04-08 22:34:57,713 - root - INFO - ----------------------------------
+Traceback (most recent call last):
+  File "G:\interface_python\testCase\ddt_case.py", line 35, in testCase
+    self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
+KeyError: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Program Files\Python\python36\lib\site-packages\ddt.py", line 145, in wrapper
+    return func(self, *args, **kwargs)
+  File "G:\interface_python\testCase\ddt_case.py", line 38, in testCase
+    Log().warning('对【code】断言,断言结果--预期值%s != 实际值%s' % (expect_one['code'], apijson[0]))
+KeyError: 0
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_13' class='none'>
+    <td class='errorCase'><div class='testcase'>testCase_13: dict() -> new empty dictionary</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_13' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_13'>错误</button>
+    <div id='div_ft1_13' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_13' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_13'>错误</button>
+    <div style="text-align:left" id='div_ft1_13' class="collapse in">
+    <pre>
+    
+ft1_13: 2019-04-08 22:34:57,714 - root - INFO - 测试用例开始执行
+2019-04-08 22:34:57,715 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos', 'listname': 'get请求返回resultcode正确', 'key': 13.0, 'coneent': 'not argument', 'param_place': '', 'fangshi': 'GET', 'expect1': 'code=200', 'expect2': 'param=null'}
+2019-04-08 22:34:58,728 - root - ERROR - get请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos?not%20argument (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000239D28B77F0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-08 22:34:58,729 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos,key:13.0,参数:not argument,请求方式：GET
+2019-04-08 22:34:58,729 - root - INFO - 测试用例执行完毕
+2019-04-08 22:34:58,729 - root - INFO - ----------------------------------
+Traceback (most recent call last):
+  File "G:\interface_python\testCase\ddt_case.py", line 35, in testCase
+    self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
+KeyError: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Program Files\Python\python36\lib\site-packages\ddt.py", line 145, in wrapper
+    return func(self, *args, **kwargs)
+  File "G:\interface_python\testCase\ddt_case.py", line 38, in testCase
+    Log().warning('对【code】断言,断言结果--预期值%s != 实际值%s' % (expect_one['code'], apijson[0]))
+KeyError: 0
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_14' class='none'>
+    <td class='errorCase'><div class='testcase'>testCase_14: dict() -> new empty dictionary</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_14' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_14'>错误</button>
+    <div id='div_ft1_14' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_14' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_14'>错误</button>
+    <div style="text-align:left" id='div_ft1_14' class="collapse in">
+    <pre>
+    
+ft1_14: 2019-04-08 22:34:58,730 - root - INFO - 测试用例开始执行
+2019-04-08 22:34:58,731 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos', 'listname': 'get请求返回resultcode不正确', 'key': 14.0, 'coneent': 'not argument', 'param_place': '', 'fangshi': 'GET', 'expect1': 'code=2011', 'expect2': 'param=null'}
+2019-04-08 22:34:59,734 - root - ERROR - get请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos?not%20argument (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000239D28B7978&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-08 22:34:59,735 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos,key:14.0,参数:not argument,请求方式：GET
+2019-04-08 22:34:59,735 - root - INFO - 测试用例执行完毕
+2019-04-08 22:34:59,736 - root - INFO - ----------------------------------
+Traceback (most recent call last):
+  File "G:\interface_python\testCase\ddt_case.py", line 35, in testCase
+    self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
+KeyError: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Program Files\Python\python36\lib\site-packages\ddt.py", line 145, in wrapper
+    return func(self, *args, **kwargs)
+  File "G:\interface_python\testCase\ddt_case.py", line 38, in testCase
+    Log().warning('对【code】断言,断言结果--预期值%s != 实际值%s' % (expect_one['code'], apijson[0]))
+KeyError: 0
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_15' class='none'>
+    <td class='errorCase'><div class='testcase'>testCase_15: dict() -> new empty dictionary</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_15' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_15'>错误</button>
+    <div id='div_ft1_15' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_15' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_15'>错误</button>
+    <div style="text-align:left" id='div_ft1_15' class="collapse in">
+    <pre>
+    
+ft1_15: 2019-04-08 22:34:59,737 - root - INFO - 测试用例开始执行
+2019-04-08 22:34:59,738 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos', 'listname': 'post请求返回resultcode和task正确', 'key': 15.0, 'coneent': '{"task":"fourth request"}', 'param_place': '', 'fangshi': 'POST', 'expect1': 'code=202', 'expect2': 'task=fourth request'}
+2019-04-08 22:35:00,741 - root - ERROR - post请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000239D28A0668&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-08 22:35:00,742 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos,key:15.0,参数:{"task":"fourth request"},请求方式：POST
+2019-04-08 22:35:00,742 - root - INFO - 测试用例执行完毕
+2019-04-08 22:35:00,742 - root - INFO - ----------------------------------
+Traceback (most recent call last):
+  File "G:\interface_python\testCase\ddt_case.py", line 35, in testCase
+    self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
+KeyError: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Program Files\Python\python36\lib\site-packages\ddt.py", line 145, in wrapper
+    return func(self, *args, **kwargs)
+  File "G:\interface_python\testCase\ddt_case.py", line 38, in testCase
+    Log().warning('对【code】断言,断言结果--预期值%s != 实际值%s' % (expect_one['code'], apijson[0]))
+KeyError: 0
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_16' class='none'>
+    <td class='errorCase'><div class='testcase'>testCase_16: dict() -> new empty dictionary</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_16' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_16'>错误</button>
+    <div id='div_ft1_16' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_16' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_16'>错误</button>
+    <div style="text-align:left" id='div_ft1_16' class="collapse in">
+    <pre>
+    
+ft1_16: 2019-04-08 22:35:00,743 - root - INFO - 测试用例开始执行
+2019-04-08 22:35:00,744 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos/todo1', 'listname': 'put请求返回task不正确', 'key': 16.0, 'coneent': '{"task":"put success"}', 'param_place': '', 'fangshi': 'PUT', 'expect1': 'code=201', 'expect2': 'task=put succ'}
+2019-04-08 22:35:01,748 - root - ERROR - put请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos/todo1 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000239D289C390&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-08 22:35:01,748 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos/todo1,key:16.0,参数:{"task":"put success"},请求方式：PUT
+2019-04-08 22:35:01,749 - root - INFO - 测试用例执行完毕
+2019-04-08 22:35:01,749 - root - INFO - ----------------------------------
+Traceback (most recent call last):
+  File "G:\interface_python\testCase\ddt_case.py", line 35, in testCase
+    self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
+KeyError: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Program Files\Python\python36\lib\site-packages\ddt.py", line 145, in wrapper
+    return func(self, *args, **kwargs)
+  File "G:\interface_python\testCase\ddt_case.py", line 38, in testCase
+    Log().warning('对【code】断言,断言结果--预期值%s != 实际值%s' % (expect_one['code'], apijson[0]))
+KeyError: 0
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_17' class='none'>
+    <td class='errorCase'><div class='testcase'>testCase_17: dict() -> new empty dictionary</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_17' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_17'>错误</button>
+    <div id='div_ft1_17' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_17' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_17'>错误</button>
+    <div style="text-align:left" id='div_ft1_17' class="collapse in">
+    <pre>
+    
+ft1_17: 2019-04-08 22:35:01,750 - root - INFO - 测试用例开始执行
+2019-04-08 22:35:01,751 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos/todo2', 'listname': 'put请求返回resultcode和task正确', 'key': 17.0, 'coneent': '{"task":"update success"}', 'param_place': 'database', 'fangshi': 'PUT', 'expect1': 'code=201', 'expect2': 'task=update success'}
+2019-04-08 22:35:01,755 - root - INFO - 当前接口涉及数据库：orderdb
+2019-04-08 22:35:01,961 - root - INFO - 成功登录数据库：orderdb，版本为：8.0.11，执行SQL：select content from blog_blog where id = '7'
+2019-04-08 22:35:01,995 - root - INFO - 查询结果：{"task":"update success"}
+2019-04-08 22:35:01,995 - root - INFO - 数据格式为：{"task":"update success"}
+2019-04-08 22:35:02,998 - root - ERROR - put请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos/todo2 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000239D28BFBA8&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-08 22:35:02,998 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos/todo2,key:17.0,参数:{"task":"update success"},请求方式：PUT
+2019-04-08 22:35:02,999 - root - INFO - 测试用例执行完毕
+2019-04-08 22:35:02,999 - root - INFO - ----------------------------------
+Traceback (most recent call last):
+  File "G:\interface_python\testCase\ddt_case.py", line 35, in testCase
+    self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
+KeyError: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Program Files\Python\python36\lib\site-packages\ddt.py", line 145, in wrapper
+    return func(self, *args, **kwargs)
+  File "G:\interface_python\testCase\ddt_case.py", line 38, in testCase
+    Log().warning('对【code】断言,断言结果--预期值%s != 实际值%s' % (expect_one['code'], apijson[0]))
+KeyError: 0
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_18' class='none'>
+    <td class='errorCase'><div class='testcase'>testCase_18: dict() -> new empty dictionary</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_18' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_18'>错误</button>
+    <div id='div_ft1_18' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_18' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_18'>错误</button>
+    <div style="text-align:left" id='div_ft1_18' class="collapse in">
+    <pre>
+    
+ft1_18: 2019-04-08 22:35:03,000 - root - INFO - 测试用例开始执行
+2019-04-08 22:35:03,001 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos/todo1', 'listname': 'delete请求成功删除数据', 'key': 18.0, 'coneent': 'not argument', 'param_place': '', 'fangshi': 'DELETE', 'expect1': 'code=204', 'expect2': 'param=null'}
+2019-04-08 22:35:04,005 - root - ERROR - delete请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos/todo1?not%20argument (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000239D28B70F0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-08 22:35:04,006 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos/todo1,key:18.0,参数:not argument,请求方式：DELETE
+2019-04-08 22:35:04,007 - root - INFO - 测试用例执行完毕
+2019-04-08 22:35:04,007 - root - INFO - ----------------------------------
+Traceback (most recent call last):
+  File "G:\interface_python\testCase\ddt_case.py", line 35, in testCase
+    self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
+KeyError: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Program Files\Python\python36\lib\site-packages\ddt.py", line 145, in wrapper
+    return func(self, *args, **kwargs)
+  File "G:\interface_python\testCase\ddt_case.py", line 38, in testCase
+    Log().warning('对【code】断言,断言结果--预期值%s != 实际值%s' % (expect_one['code'], apijson[0]))
+KeyError: 0
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='total_row' class="text-center active">
+    <td>总计</td>
+    <td>18</td>
+    <td>0</td>
+    <td>0</td>
+    <td>18</td>
+    <td>通过率：0.00%</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+    <div style=" position:fixed;right:50px; bottom:30px; width:20px; height:20px;cursor:pointer">
+    <a href="#"><span class="glyphicon glyphicon-eject" style = "font-size:30px;" aria-hidden="true">
+    </span></a></div>
+    
+
+</body>
+</html>

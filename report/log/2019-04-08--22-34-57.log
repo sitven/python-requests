@@ -1,0 +1,6 @@
+2019-04-08 22:34:57,712 - root - ERROR - delete请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos/todo1?not%20argument (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000239D28967B8>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-08 22:34:57,712 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos/todo1,key:12.0,参数:not argument,请求方式：DELETE
+2019-04-08 22:34:57,712 - root - INFO - 测试用例执行完毕
+2019-04-08 22:34:57,713 - root - INFO - ----------------------------------
+2019-04-08 22:34:57,714 - root - INFO - 测试用例开始执行
+2019-04-08 22:34:57,715 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos', 'listname': 'get请求返回resultcode正确', 'key': 13.0, 'coneent': 'not argument', 'param_place': '', 'fangshi': 'GET', 'expect1': 'code=200', 'expect2': 'param=null'}
