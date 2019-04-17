@@ -16,13 +16,13 @@ class TestApi(object):
 		self.assertdata = assertdata		# 期望值2
 
 	def get_param(self):
-		if self.param_place != 'database':
+		if self.param_place != 'database':		# 非database传参直接返回excel文件中的参数中的
 			return self.connent
-		else:
+		else:									# 通过yaml文件中的
 			# 获取数据库名
 			self.database = Getyaml(yamlparam="interface_db", interface=self.url).port_db()
 			Log().info('当前接口涉及数据库：%s' % self.database)
-			#执行数据库操作
+			# 执行数据库操作
 			post_data = Operate_db(self.database, self.url).Perform()
 			Log().info('数据格式为：%s' % post_data)
 			return post_data

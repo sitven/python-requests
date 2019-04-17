@@ -123,8 +123,8 @@ function html_escape(s) {
 <div class='heading'>
 <h2 style="font-family: Microsoft YaHei">接口自动化测试报告</h2>
 <p class='attribute'><strong>测试人员 : </strong> 命命</p>
-<p class='attribute'><strong>开始时间 : </strong> 2019-04-17 14:43:22</p>
-<p class='attribute'><strong>合计耗时 : </strong> 0:00:19.713804</p>
+<p class='attribute'><strong>开始时间 : </strong> 2019-04-17 15:06:14</p>
+<p class='attribute'><strong>合计耗时 : </strong> 0:00:19.326056</p>
 <p class='attribute'><strong>测试结果 : </strong> 共 18，错误 18，通过率= 0.00%</p>
 
 <p class='description'></p>
@@ -177,12 +177,12 @@ function html_escape(s) {
     <div style="text-align:left" id='div_ft1_1' class="collapse in">
     <pre>
     
-ft1_1: 2019-04-17 14:43:22,447 - root - INFO - 测试用例开始执行
-2019-04-17 14:43:22,451 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos', 'listname': 'get请求返回resultcode正确', 'key': 1.0, 'coneent': 'not argument', 'param_place': '', 'fangshi': 'GET', 'expect1': 'code=200', 'expect2': 'param=null'}
-2019-04-17 14:43:23,466 - root - ERROR - get请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos?not%20argument (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002916F8B3320&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
-2019-04-17 14:43:23,472 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos,key:1.0,参数:not argument,请求方式：GET
-2019-04-17 14:43:23,477 - root - INFO - 测试用例执行完毕
-2019-04-17 14:43:23,485 - root - INFO - ----------------------------------
+ft1_1: 2019-04-17 15:06:14,801 - root - INFO - 测试用例开始执行
+2019-04-17 15:06:14,806 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos', 'listname': 'get请求返回resultcode正确', 'key': 1.0, 'coneent': 'not argument', 'param_place': '', 'fangshi': 'GET', 'expect1': 'code=200', 'expect2': 'param=null'}
+2019-04-17 15:06:15,822 - root - ERROR - get请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos?not%20argument (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000020C007234E0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-17 15:06:15,828 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos,key:1.0,参数:not argument,请求方式：GET
+2019-04-17 15:06:15,833 - root - INFO - 测试用例执行完毕
+2019-04-17 15:06:15,839 - root - INFO - ----------------------------------
 Traceback (most recent call last):
   File "D:\test_script\python-requests\testCase\ddt_case.py", line 34, in testCase
     self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
@@ -215,12 +215,12 @@ KeyError: 0
     <div style="text-align:left" id='div_ft1_2' class="collapse in">
     <pre>
     
-ft1_2: 2019-04-17 14:43:23,494 - root - INFO - 测试用例开始执行
-2019-04-17 14:43:23,500 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos', 'listname': 'get请求返回resultcode不正确', 'key': 2.0, 'coneent': 'not argument', 'param_place': '', 'fangshi': 'GET', 'expect1': 'code=2011', 'expect2': 'param=null'}
-2019-04-17 14:43:24,516 - root - ERROR - get请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos?not%20argument (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002916F8EE978&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
-2019-04-17 14:43:24,521 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos,key:2.0,参数:not argument,请求方式：GET
-2019-04-17 14:43:24,526 - root - INFO - 测试用例执行完毕
-2019-04-17 14:43:24,533 - root - INFO - ----------------------------------
+ft1_2: 2019-04-17 15:06:15,844 - root - INFO - 测试用例开始执行
+2019-04-17 15:06:15,849 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos', 'listname': 'get请求返回resultcode不正确', 'key': 2.0, 'coneent': 'not argument', 'param_place': '', 'fangshi': 'GET', 'expect1': 'code=2011', 'expect2': 'param=null'}
+2019-04-17 15:06:16,859 - root - ERROR - get请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos?not%20argument (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000020C0075E9B0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-17 15:06:16,864 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos,key:2.0,参数:not argument,请求方式：GET
+2019-04-17 15:06:16,869 - root - INFO - 测试用例执行完毕
+2019-04-17 15:06:16,875 - root - INFO - ----------------------------------
 Traceback (most recent call last):
   File "D:\test_script\python-requests\testCase\ddt_case.py", line 34, in testCase
     self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
@@ -253,12 +253,12 @@ KeyError: 0
     <div style="text-align:left" id='div_ft1_3' class="collapse in">
     <pre>
     
-ft1_3: 2019-04-17 14:43:24,539 - root - INFO - 测试用例开始执行
-2019-04-17 14:43:24,543 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos', 'listname': 'post请求返回resultcode和task正确', 'key': 3.0, 'coneent': '{"task":"fourth request"}', 'param_place': '', 'fangshi': 'POST', 'expect1': 'code=202', 'expect2': 'task=fourth request'}
-2019-04-17 14:43:25,554 - root - ERROR - post请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002916F8EB160&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
-2019-04-17 14:43:25,565 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos,key:3.0,参数:{"task":"fourth request"},请求方式：POST
-2019-04-17 14:43:25,581 - root - INFO - 测试用例执行完毕
-2019-04-17 14:43:25,591 - root - INFO - ----------------------------------
+ft1_3: 2019-04-17 15:06:16,881 - root - INFO - 测试用例开始执行
+2019-04-17 15:06:16,885 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos', 'listname': 'post请求返回resultcode和task正确', 'key': 3.0, 'coneent': '{"task":"fourth request"}', 'param_place': '', 'fangshi': 'POST', 'expect1': 'code=202', 'expect2': 'task=fourth request'}
+2019-04-17 15:06:17,894 - root - ERROR - post请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000020C00758198&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-17 15:06:17,899 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos,key:3.0,参数:{"task":"fourth request"},请求方式：POST
+2019-04-17 15:06:17,904 - root - INFO - 测试用例执行完毕
+2019-04-17 15:06:17,911 - root - INFO - ----------------------------------
 Traceback (most recent call last):
   File "D:\test_script\python-requests\testCase\ddt_case.py", line 34, in testCase
     self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
@@ -291,12 +291,12 @@ KeyError: 0
     <div style="text-align:left" id='div_ft1_4' class="collapse in">
     <pre>
     
-ft1_4: 2019-04-17 14:43:25,598 - root - INFO - 测试用例开始执行
-2019-04-17 14:43:25,606 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos/todo1', 'listname': 'put请求返回task不正确', 'key': 4.0, 'coneent': '{"task":"put success"}', 'param_place': '', 'fangshi': 'PUT', 'expect1': 'code=201', 'expect2': 'task=put succ'}
-2019-04-17 14:43:26,622 - root - ERROR - put请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos/todo1 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002916F8EBF98&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
-2019-04-17 14:43:26,627 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos/todo1,key:4.0,参数:{"task":"put success"},请求方式：PUT
-2019-04-17 14:43:26,631 - root - INFO - 测试用例执行完毕
-2019-04-17 14:43:26,637 - root - INFO - ----------------------------------
+ft1_4: 2019-04-17 15:06:17,917 - root - INFO - 测试用例开始执行
+2019-04-17 15:06:17,921 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos/todo1', 'listname': 'put请求返回task不正确', 'key': 4.0, 'coneent': '{"task":"put success"}', 'param_place': '', 'fangshi': 'PUT', 'expect1': 'code=201', 'expect2': 'task=put succ'}
+2019-04-17 15:06:18,930 - root - ERROR - put请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos/todo1 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000020C00758F28&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-17 15:06:18,935 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos/todo1,key:4.0,参数:{"task":"put success"},请求方式：PUT
+2019-04-17 15:06:18,940 - root - INFO - 测试用例执行完毕
+2019-04-17 15:06:18,947 - root - INFO - ----------------------------------
 Traceback (most recent call last):
   File "D:\test_script\python-requests\testCase\ddt_case.py", line 34, in testCase
     self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
@@ -329,16 +329,16 @@ KeyError: 0
     <div style="text-align:left" id='div_ft1_5' class="collapse in">
     <pre>
     
-ft1_5: 2019-04-17 14:43:26,642 - root - INFO - 测试用例开始执行
-2019-04-17 14:43:26,648 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos/todo2', 'listname': 'put请求返回resultcode和task正确', 'key': 5.0, 'coneent': '{"task":"update success"}', 'param_place': 'database', 'fangshi': 'PUT', 'expect1': 'code=201', 'expect2': 'task=update success'}
-2019-04-17 14:43:26,656 - root - INFO - 当前接口涉及数据库：orderdb
-2019-04-17 14:43:26,858 - root - INFO - 成功登录数据库：orderdb，版本为：8.0.11，执行SQL：select content from blog_blog where id = '7'
-2019-04-17 14:43:26,900 - root - INFO - 查询结果：{"task":"update success"}
-2019-04-17 14:43:26,907 - root - INFO - 数据格式为：{"task":"update success"}
-2019-04-17 14:43:27,918 - root - ERROR - put请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos/todo2 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002916F8EEE48&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
-2019-04-17 14:43:27,924 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos/todo2,key:5.0,参数:{"task":"update success"},请求方式：PUT
-2019-04-17 14:43:27,934 - root - INFO - 测试用例执行完毕
-2019-04-17 14:43:27,943 - root - INFO - ----------------------------------
+ft1_5: 2019-04-17 15:06:18,952 - root - INFO - 测试用例开始执行
+2019-04-17 15:06:18,957 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos/todo2', 'listname': 'put请求返回resultcode和task正确', 'key': 5.0, 'coneent': '{"task":"update success"}', 'param_place': 'database', 'fangshi': 'PUT', 'expect1': 'code=201', 'expect2': 'task=update success'}
+2019-04-17 15:06:18,965 - root - INFO - 当前接口涉及数据库：orderdb
+2019-04-17 15:06:19,141 - root - INFO - 成功登录数据库：orderdb，版本为：8.0.11，执行SQL：select content from blog_blog where id = '7'
+2019-04-17 15:06:19,181 - root - INFO - 查询结果：{"task":"update success"}
+2019-04-17 15:06:19,185 - root - INFO - 数据格式为：{"task":"update success"}
+2019-04-17 15:06:20,193 - root - ERROR - put请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos/todo2 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000020C0075E9E8&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-17 15:06:20,198 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos/todo2,key:5.0,参数:{"task":"update success"},请求方式：PUT
+2019-04-17 15:06:20,203 - root - INFO - 测试用例执行完毕
+2019-04-17 15:06:20,211 - root - INFO - ----------------------------------
 Traceback (most recent call last):
   File "D:\test_script\python-requests\testCase\ddt_case.py", line 34, in testCase
     self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
@@ -371,12 +371,12 @@ KeyError: 0
     <div style="text-align:left" id='div_ft1_6' class="collapse in">
     <pre>
     
-ft1_6: 2019-04-17 14:43:27,949 - root - INFO - 测试用例开始执行
-2019-04-17 14:43:27,954 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos/todo1', 'listname': 'delete请求成功删除数据', 'key': 6.0, 'coneent': 'not argument', 'param_place': '', 'fangshi': 'DELETE', 'expect1': 'code=204', 'expect2': 'param=null'}
-2019-04-17 14:43:28,965 - root - ERROR - delete请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos/todo1?not%20argument (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002916F8EB438&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
-2019-04-17 14:43:28,971 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos/todo1,key:6.0,参数:not argument,请求方式：DELETE
-2019-04-17 14:43:28,977 - root - INFO - 测试用例执行完毕
-2019-04-17 14:43:28,984 - root - INFO - ----------------------------------
+ft1_6: 2019-04-17 15:06:20,216 - root - INFO - 测试用例开始执行
+2019-04-17 15:06:20,221 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos/todo1', 'listname': 'delete请求成功删除数据', 'key': 6.0, 'coneent': 'not argument', 'param_place': '', 'fangshi': 'DELETE', 'expect1': 'code=204', 'expect2': 'param=null'}
+2019-04-17 15:06:21,228 - root - ERROR - delete请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos/todo1?not%20argument (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000020C007580F0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-17 15:06:21,233 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos/todo1,key:6.0,参数:not argument,请求方式：DELETE
+2019-04-17 15:06:21,238 - root - INFO - 测试用例执行完毕
+2019-04-17 15:06:21,246 - root - INFO - ----------------------------------
 Traceback (most recent call last):
   File "D:\test_script\python-requests\testCase\ddt_case.py", line 34, in testCase
     self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
@@ -409,12 +409,12 @@ KeyError: 0
     <div style="text-align:left" id='div_ft1_7' class="collapse in">
     <pre>
     
-ft1_7: 2019-04-17 14:43:28,991 - root - INFO - 测试用例开始执行
-2019-04-17 14:43:28,996 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos', 'listname': 'get请求返回resultcode正确', 'key': 7.0, 'coneent': 'not argument', 'param_place': '', 'fangshi': 'GET', 'expect1': 'code=200', 'expect2': 'param=null'}
-2019-04-17 14:43:30,030 - root - ERROR - get请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos?not%20argument (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002916F8D5630&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
-2019-04-17 14:43:30,036 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos,key:7.0,参数:not argument,请求方式：GET
-2019-04-17 14:43:30,043 - root - INFO - 测试用例执行完毕
-2019-04-17 14:43:30,052 - root - INFO - ----------------------------------
+ft1_7: 2019-04-17 15:06:21,251 - root - INFO - 测试用例开始执行
+2019-04-17 15:06:21,256 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos', 'listname': 'get请求返回resultcode正确', 'key': 7.0, 'coneent': 'not argument', 'param_place': '', 'fangshi': 'GET', 'expect1': 'code=200', 'expect2': 'param=null'}
+2019-04-17 15:06:22,280 - root - ERROR - get请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos?not%20argument (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000020C0074F668&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-17 15:06:22,287 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos,key:7.0,参数:not argument,请求方式：GET
+2019-04-17 15:06:22,293 - root - INFO - 测试用例执行完毕
+2019-04-17 15:06:22,300 - root - INFO - ----------------------------------
 Traceback (most recent call last):
   File "D:\test_script\python-requests\testCase\ddt_case.py", line 34, in testCase
     self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
@@ -447,12 +447,12 @@ KeyError: 0
     <div style="text-align:left" id='div_ft1_8' class="collapse in">
     <pre>
     
-ft1_8: 2019-04-17 14:43:30,058 - root - INFO - 测试用例开始执行
-2019-04-17 14:43:30,064 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos', 'listname': 'get请求返回resultcode不正确', 'key': 8.0, 'coneent': 'not argument', 'param_place': '', 'fangshi': 'GET', 'expect1': 'code=2011', 'expect2': 'param=null'}
-2019-04-17 14:43:31,074 - root - ERROR - get请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos?not%20argument (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002916F8B3320&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
-2019-04-17 14:43:31,079 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos,key:8.0,参数:not argument,请求方式：GET
-2019-04-17 14:43:31,084 - root - INFO - 测试用例执行完毕
-2019-04-17 14:43:31,090 - root - INFO - ----------------------------------
+ft1_8: 2019-04-17 15:06:22,307 - root - INFO - 测试用例开始执行
+2019-04-17 15:06:22,312 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos', 'listname': 'get请求返回resultcode不正确', 'key': 8.0, 'coneent': 'not argument', 'param_place': '', 'fangshi': 'GET', 'expect1': 'code=2011', 'expect2': 'param=null'}
+2019-04-17 15:06:23,325 - root - ERROR - get请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos?not%20argument (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000020C007234A8&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-17 15:06:23,330 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos,key:8.0,参数:not argument,请求方式：GET
+2019-04-17 15:06:23,335 - root - INFO - 测试用例执行完毕
+2019-04-17 15:06:23,341 - root - INFO - ----------------------------------
 Traceback (most recent call last):
   File "D:\test_script\python-requests\testCase\ddt_case.py", line 34, in testCase
     self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
@@ -485,12 +485,12 @@ KeyError: 0
     <div style="text-align:left" id='div_ft1_9' class="collapse in">
     <pre>
     
-ft1_9: 2019-04-17 14:43:31,096 - root - INFO - 测试用例开始执行
-2019-04-17 14:43:31,101 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos', 'listname': 'post请求返回resultcode和task正确', 'key': 9.0, 'coneent': '{"task":"fourth request"}', 'param_place': '', 'fangshi': 'POST', 'expect1': 'code=202', 'expect2': 'task=fourth request'}
-2019-04-17 14:43:32,109 - root - ERROR - post请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002916F8DB588&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
-2019-04-17 14:43:32,114 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos,key:9.0,参数:{"task":"fourth request"},请求方式：POST
-2019-04-17 14:43:32,119 - root - INFO - 测试用例执行完毕
-2019-04-17 14:43:32,125 - root - INFO - ----------------------------------
+ft1_9: 2019-04-17 15:06:23,346 - root - INFO - 测试用例开始执行
+2019-04-17 15:06:23,351 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos', 'listname': 'post请求返回resultcode和task正确', 'key': 9.0, 'coneent': '{"task":"fourth request"}', 'param_place': '', 'fangshi': 'POST', 'expect1': 'code=202', 'expect2': 'task=fourth request'}
+2019-04-17 15:06:24,359 - root - ERROR - post请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000020C00748588&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-17 15:06:24,364 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos,key:9.0,参数:{"task":"fourth request"},请求方式：POST
+2019-04-17 15:06:24,369 - root - INFO - 测试用例执行完毕
+2019-04-17 15:06:24,375 - root - INFO - ----------------------------------
 Traceback (most recent call last):
   File "D:\test_script\python-requests\testCase\ddt_case.py", line 34, in testCase
     self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
@@ -523,12 +523,12 @@ KeyError: 0
     <div style="text-align:left" id='div_ft1_10' class="collapse in">
     <pre>
     
-ft1_10: 2019-04-17 14:43:32,131 - root - INFO - 测试用例开始执行
-2019-04-17 14:43:32,136 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos/todo1', 'listname': 'put请求返回task不正确', 'key': 10.0, 'coneent': '{"task":"put success"}', 'param_place': '', 'fangshi': 'PUT', 'expect1': 'code=201', 'expect2': 'task=put succ'}
-2019-04-17 14:43:33,146 - root - ERROR - put请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos/todo1 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002916F8D5828&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
-2019-04-17 14:43:33,150 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos/todo1,key:10.0,参数:{"task":"put success"},请求方式：PUT
-2019-04-17 14:43:33,155 - root - INFO - 测试用例执行完毕
-2019-04-17 14:43:33,163 - root - INFO - ----------------------------------
+ft1_10: 2019-04-17 15:06:24,382 - root - INFO - 测试用例开始执行
+2019-04-17 15:06:24,387 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos/todo1', 'listname': 'put请求返回task不正确', 'key': 10.0, 'coneent': '{"task":"put success"}', 'param_place': '', 'fangshi': 'PUT', 'expect1': 'code=201', 'expect2': 'task=put succ'}
+2019-04-17 15:06:25,397 - root - ERROR - put请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos/todo1 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000020C0074F8D0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-17 15:06:25,406 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos/todo1,key:10.0,参数:{"task":"put success"},请求方式：PUT
+2019-04-17 15:06:25,411 - root - INFO - 测试用例执行完毕
+2019-04-17 15:06:25,418 - root - INFO - ----------------------------------
 Traceback (most recent call last):
   File "D:\test_script\python-requests\testCase\ddt_case.py", line 34, in testCase
     self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
@@ -561,16 +561,16 @@ KeyError: 0
     <div style="text-align:left" id='div_ft1_11' class="collapse in">
     <pre>
     
-ft1_11: 2019-04-17 14:43:33,168 - root - INFO - 测试用例开始执行
-2019-04-17 14:43:33,173 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos/todo2', 'listname': 'put请求返回resultcode和task正确', 'key': 11.0, 'coneent': '{"task":"update success"}', 'param_place': 'database', 'fangshi': 'PUT', 'expect1': 'code=201', 'expect2': 'task=update success'}
-2019-04-17 14:43:33,181 - root - INFO - 当前接口涉及数据库：orderdb
-2019-04-17 14:43:33,369 - root - INFO - 成功登录数据库：orderdb，版本为：8.0.11，执行SQL：select content from blog_blog where id = '7'
-2019-04-17 14:43:33,409 - root - INFO - 查询结果：{"task":"update success"}
-2019-04-17 14:43:33,415 - root - INFO - 数据格式为：{"task":"update success"}
-2019-04-17 14:43:34,423 - root - ERROR - put请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos/todo2 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002916F8EB4A8&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
-2019-04-17 14:43:34,428 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos/todo2,key:11.0,参数:{"task":"update success"},请求方式：PUT
-2019-04-17 14:43:34,433 - root - INFO - 测试用例执行完毕
-2019-04-17 14:43:34,440 - root - INFO - ----------------------------------
+ft1_11: 2019-04-17 15:06:25,423 - root - INFO - 测试用例开始执行
+2019-04-17 15:06:25,428 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos/todo2', 'listname': 'put请求返回resultcode和task正确', 'key': 11.0, 'coneent': '{"task":"update success"}', 'param_place': 'database', 'fangshi': 'PUT', 'expect1': 'code=201', 'expect2': 'task=update success'}
+2019-04-17 15:06:25,436 - root - INFO - 当前接口涉及数据库：orderdb
+2019-04-17 15:06:25,596 - root - INFO - 成功登录数据库：orderdb，版本为：8.0.11，执行SQL：select content from blog_blog where id = '7'
+2019-04-17 15:06:25,631 - root - INFO - 查询结果：{"task":"update success"}
+2019-04-17 15:06:25,636 - root - INFO - 数据格式为：{"task":"update success"}
+2019-04-17 15:06:26,646 - root - ERROR - put请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos/todo2 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000020C00758F60&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-17 15:06:26,651 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos/todo2,key:11.0,参数:{"task":"update success"},请求方式：PUT
+2019-04-17 15:06:26,655 - root - INFO - 测试用例执行完毕
+2019-04-17 15:06:26,662 - root - INFO - ----------------------------------
 Traceback (most recent call last):
   File "D:\test_script\python-requests\testCase\ddt_case.py", line 34, in testCase
     self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
@@ -603,12 +603,12 @@ KeyError: 0
     <div style="text-align:left" id='div_ft1_12' class="collapse in">
     <pre>
     
-ft1_12: 2019-04-17 14:43:34,446 - root - INFO - 测试用例开始执行
-2019-04-17 14:43:34,451 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos/todo1', 'listname': 'delete请求成功删除数据', 'key': 12.0, 'coneent': 'not argument', 'param_place': '', 'fangshi': 'DELETE', 'expect1': 'code=204', 'expect2': 'param=null'}
-2019-04-17 14:43:35,461 - root - ERROR - delete请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos/todo1?not%20argument (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002916F8EB588&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
-2019-04-17 14:43:35,470 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos/todo1,key:12.0,参数:not argument,请求方式：DELETE
-2019-04-17 14:43:35,485 - root - INFO - 测试用例执行完毕
-2019-04-17 14:43:35,496 - root - INFO - ----------------------------------
+ft1_12: 2019-04-17 15:06:26,668 - root - INFO - 测试用例开始执行
+2019-04-17 15:06:26,674 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos/todo1', 'listname': 'delete请求成功删除数据', 'key': 12.0, 'coneent': 'not argument', 'param_place': '', 'fangshi': 'DELETE', 'expect1': 'code=204', 'expect2': 'param=null'}
+2019-04-17 15:06:27,684 - root - ERROR - delete请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos/todo1?not%20argument (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000020C00758A58&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-17 15:06:27,689 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos/todo1,key:12.0,参数:not argument,请求方式：DELETE
+2019-04-17 15:06:27,698 - root - INFO - 测试用例执行完毕
+2019-04-17 15:06:27,703 - root - INFO - ----------------------------------
 Traceback (most recent call last):
   File "D:\test_script\python-requests\testCase\ddt_case.py", line 34, in testCase
     self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
@@ -641,12 +641,12 @@ KeyError: 0
     <div style="text-align:left" id='div_ft1_13' class="collapse in">
     <pre>
     
-ft1_13: 2019-04-17 14:43:35,505 - root - INFO - 测试用例开始执行
-2019-04-17 14:43:35,513 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos', 'listname': 'get请求返回resultcode正确', 'key': 13.0, 'coneent': 'not argument', 'param_place': '', 'fangshi': 'GET', 'expect1': 'code=200', 'expect2': 'param=null'}
-2019-04-17 14:43:36,531 - root - ERROR - get请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos?not%20argument (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002916F8DB550&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
-2019-04-17 14:43:36,633 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos,key:13.0,参数:not argument,请求方式：GET
-2019-04-17 14:43:36,667 - root - INFO - 测试用例执行完毕
-2019-04-17 14:43:36,710 - root - INFO - ----------------------------------
+ft1_13: 2019-04-17 15:06:27,709 - root - INFO - 测试用例开始执行
+2019-04-17 15:06:27,714 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos', 'listname': 'get请求返回resultcode正确', 'key': 13.0, 'coneent': 'not argument', 'param_place': '', 'fangshi': 'GET', 'expect1': 'code=200', 'expect2': 'param=null'}
+2019-04-17 15:06:28,722 - root - ERROR - get请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos?not%20argument (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000020C00748860&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-17 15:06:28,727 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos,key:13.0,参数:not argument,请求方式：GET
+2019-04-17 15:06:28,732 - root - INFO - 测试用例执行完毕
+2019-04-17 15:06:28,739 - root - INFO - ----------------------------------
 Traceback (most recent call last):
   File "D:\test_script\python-requests\testCase\ddt_case.py", line 34, in testCase
     self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
@@ -679,12 +679,12 @@ KeyError: 0
     <div style="text-align:left" id='div_ft1_14' class="collapse in">
     <pre>
     
-ft1_14: 2019-04-17 14:43:36,735 - root - INFO - 测试用例开始执行
-2019-04-17 14:43:36,749 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos', 'listname': 'get请求返回resultcode不正确', 'key': 14.0, 'coneent': 'not argument', 'param_place': '', 'fangshi': 'GET', 'expect1': 'code=2011', 'expect2': 'param=null'}
-2019-04-17 14:43:37,777 - root - ERROR - get请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos?not%20argument (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002916F8EE400&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
-2019-04-17 14:43:37,781 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos,key:14.0,参数:not argument,请求方式：GET
-2019-04-17 14:43:37,786 - root - INFO - 测试用例执行完毕
-2019-04-17 14:43:37,793 - root - INFO - ----------------------------------
+ft1_14: 2019-04-17 15:06:28,744 - root - INFO - 测试用例开始执行
+2019-04-17 15:06:28,749 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos', 'listname': 'get请求返回resultcode不正确', 'key': 14.0, 'coneent': 'not argument', 'param_place': '', 'fangshi': 'GET', 'expect1': 'code=2011', 'expect2': 'param=null'}
+2019-04-17 15:06:29,756 - root - ERROR - get请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos?not%20argument (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000020C0075E6D8&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-17 15:06:29,760 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos,key:14.0,参数:not argument,请求方式：GET
+2019-04-17 15:06:29,765 - root - INFO - 测试用例执行完毕
+2019-04-17 15:06:29,772 - root - INFO - ----------------------------------
 Traceback (most recent call last):
   File "D:\test_script\python-requests\testCase\ddt_case.py", line 34, in testCase
     self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
@@ -717,12 +717,12 @@ KeyError: 0
     <div style="text-align:left" id='div_ft1_15' class="collapse in">
     <pre>
     
-ft1_15: 2019-04-17 14:43:37,799 - root - INFO - 测试用例开始执行
-2019-04-17 14:43:37,804 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos', 'listname': 'post请求返回resultcode和task正确', 'key': 15.0, 'coneent': '{"task":"fourth request"}', 'param_place': '', 'fangshi': 'POST', 'expect1': 'code=202', 'expect2': 'task=fourth request'}
-2019-04-17 14:43:38,814 - root - ERROR - post请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002916F927358&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
-2019-04-17 14:43:38,819 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos,key:15.0,参数:{"task":"fourth request"},请求方式：POST
-2019-04-17 14:43:38,824 - root - INFO - 测试用例执行完毕
-2019-04-17 14:43:38,831 - root - INFO - ----------------------------------
+ft1_15: 2019-04-17 15:06:29,777 - root - INFO - 测试用例开始执行
+2019-04-17 15:06:29,781 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos', 'listname': 'post请求返回resultcode和task正确', 'key': 15.0, 'coneent': '{"task":"fourth request"}', 'param_place': '', 'fangshi': 'POST', 'expect1': 'code=202', 'expect2': 'task=fourth request'}
+2019-04-17 15:06:30,790 - root - ERROR - post请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000020C00793390&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-17 15:06:30,795 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos,key:15.0,参数:{"task":"fourth request"},请求方式：POST
+2019-04-17 15:06:30,800 - root - INFO - 测试用例执行完毕
+2019-04-17 15:06:30,806 - root - INFO - ----------------------------------
 Traceback (most recent call last):
   File "D:\test_script\python-requests\testCase\ddt_case.py", line 34, in testCase
     self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
@@ -755,12 +755,12 @@ KeyError: 0
     <div style="text-align:left" id='div_ft1_16' class="collapse in">
     <pre>
     
-ft1_16: 2019-04-17 14:43:38,837 - root - INFO - 测试用例开始执行
-2019-04-17 14:43:38,841 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos/todo1', 'listname': 'put请求返回task不正确', 'key': 16.0, 'coneent': '{"task":"put success"}', 'param_place': '', 'fangshi': 'PUT', 'expect1': 'code=201', 'expect2': 'task=put succ'}
-2019-04-17 14:43:39,849 - root - ERROR - put请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos/todo1 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002916F927BA8&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
-2019-04-17 14:43:39,854 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos/todo1,key:16.0,参数:{"task":"put success"},请求方式：PUT
-2019-04-17 14:43:39,859 - root - INFO - 测试用例执行完毕
-2019-04-17 14:43:39,865 - root - INFO - ----------------------------------
+ft1_16: 2019-04-17 15:06:30,812 - root - INFO - 测试用例开始执行
+2019-04-17 15:06:30,817 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos/todo1', 'listname': 'put请求返回task不正确', 'key': 16.0, 'coneent': '{"task":"put success"}', 'param_place': '', 'fangshi': 'PUT', 'expect1': 'code=201', 'expect2': 'task=put succ'}
+2019-04-17 15:06:31,827 - root - ERROR - put请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos/todo1 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000020C00793BE0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-17 15:06:31,831 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos/todo1,key:16.0,参数:{"task":"put success"},请求方式：PUT
+2019-04-17 15:06:31,837 - root - INFO - 测试用例执行完毕
+2019-04-17 15:06:31,843 - root - INFO - ----------------------------------
 Traceback (most recent call last):
   File "D:\test_script\python-requests\testCase\ddt_case.py", line 34, in testCase
     self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
@@ -793,16 +793,16 @@ KeyError: 0
     <div style="text-align:left" id='div_ft1_17' class="collapse in">
     <pre>
     
-ft1_17: 2019-04-17 14:43:39,870 - root - INFO - 测试用例开始执行
-2019-04-17 14:43:39,875 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos/todo2', 'listname': 'put请求返回resultcode和task正确', 'key': 17.0, 'coneent': '{"task":"update success"}', 'param_place': 'database', 'fangshi': 'PUT', 'expect1': 'code=201', 'expect2': 'task=update success'}
-2019-04-17 14:43:39,884 - root - INFO - 当前接口涉及数据库：orderdb
-2019-04-17 14:43:40,051 - root - INFO - 成功登录数据库：orderdb，版本为：8.0.11，执行SQL：select content from blog_blog where id = '7'
-2019-04-17 14:43:40,086 - root - INFO - 查询结果：{"task":"update success"}
-2019-04-17 14:43:40,090 - root - INFO - 数据格式为：{"task":"update success"}
-2019-04-17 14:43:41,097 - root - ERROR - put请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos/todo2 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002916F8EBD68&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
-2019-04-17 14:43:41,102 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos/todo2,key:17.0,参数:{"task":"update success"},请求方式：PUT
-2019-04-17 14:43:41,107 - root - INFO - 测试用例执行完毕
-2019-04-17 14:43:41,113 - root - INFO - ----------------------------------
+ft1_17: 2019-04-17 15:06:31,848 - root - INFO - 测试用例开始执行
+2019-04-17 15:06:31,853 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos/todo2', 'listname': 'put请求返回resultcode和task正确', 'key': 17.0, 'coneent': '{"task":"update success"}', 'param_place': 'database', 'fangshi': 'PUT', 'expect1': 'code=201', 'expect2': 'task=update success'}
+2019-04-17 15:06:31,862 - root - INFO - 当前接口涉及数据库：orderdb
+2019-04-17 15:06:32,020 - root - INFO - 成功登录数据库：orderdb，版本为：8.0.11，执行SQL：select content from blog_blog where id = '7'
+2019-04-17 15:06:32,055 - root - INFO - 查询结果：{"task":"update success"}
+2019-04-17 15:06:32,060 - root - INFO - 数据格式为：{"task":"update success"}
+2019-04-17 15:06:33,067 - root - ERROR - put请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos/todo2 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000020C007584E0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-17 15:06:33,072 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos/todo2,key:17.0,参数:{"task":"update success"},请求方式：PUT
+2019-04-17 15:06:33,076 - root - INFO - 测试用例执行完毕
+2019-04-17 15:06:33,083 - root - INFO - ----------------------------------
 Traceback (most recent call last):
   File "D:\test_script\python-requests\testCase\ddt_case.py", line 34, in testCase
     self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')
@@ -835,12 +835,12 @@ KeyError: 0
     <div style="text-align:left" id='div_ft1_18' class="collapse in">
     <pre>
     
-ft1_18: 2019-04-17 14:43:41,119 - root - INFO - 测试用例开始执行
-2019-04-17 14:43:41,123 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos/todo1', 'listname': 'delete请求成功删除数据', 'key': 18.0, 'coneent': 'not argument', 'param_place': '', 'fangshi': 'DELETE', 'expect1': 'code=204', 'expect2': 'param=null'}
-2019-04-17 14:43:42,140 - root - ERROR - delete请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos/todo1?not%20argument (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000002916F8EE278&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
-2019-04-17 14:43:42,145 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos/todo1,key:18.0,参数:not argument,请求方式：DELETE
-2019-04-17 14:43:42,149 - root - INFO - 测试用例执行完毕
-2019-04-17 14:43:42,155 - root - INFO - ----------------------------------
+ft1_18: 2019-04-17 15:06:33,088 - root - INFO - 测试用例开始执行
+2019-04-17 15:06:33,093 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos/todo1', 'listname': 'delete请求成功删除数据', 'key': 18.0, 'coneent': 'not argument', 'param_place': '', 'fangshi': 'DELETE', 'expect1': 'code=204', 'expect2': 'param=null'}
+2019-04-17 15:06:34,102 - root - ERROR - delete请求出错，出错原因:HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /todos/todo1?not%20argument (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000020C0075EAC8&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。',))
+2019-04-17 15:06:34,108 - root - INFO - 请求传入数据：url:http://127.0.0.1:5000/todos/todo1,key:18.0,参数:not argument,请求方式：DELETE
+2019-04-17 15:06:34,113 - root - INFO - 测试用例执行完毕
+2019-04-17 15:06:34,120 - root - INFO - ----------------------------------
 Traceback (most recent call last):
   File "D:\test_script\python-requests\testCase\ddt_case.py", line 34, in testCase
     self.assertEqual(int(expect_one['code']), apijson[0], msg='预期和返回不一致')

@@ -45,4 +45,6 @@ class MyTest(unittest.TestCase):
                 raise
 
 if __name__ == "__main__":
-    unittest.main()
+    # unittest.main()
+    expect_two = dict(assertre(asserqingwang=data_test['expect2']))
+    print(expect_two)
