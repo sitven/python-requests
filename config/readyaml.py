@@ -1,4 +1,3 @@
-#Author:命命
 from yaml import load
 from yaml import warnings
 import os
@@ -9,8 +8,8 @@ config_path = os.path.join(curPath, "db.yaml")
 
 class Getyaml():
     def __init__(self, yamlparam, interface):
-        self.yamlparam = yamlparam                      # 要获取的字典的key
-        self.interface = interface                      #
+        self.yamlparam = yamlparam                      # 传参yaml的key获取value
+        self.interface = interface
 
     def get_data(self):
         with open(config_path, 'rb') as f:
@@ -33,6 +32,10 @@ class Getyaml():
 # param = "orderdb"
 # interface = "http://127.0.0.1:5000/requests/5"
 # Getyaml(param, interface).get_data()
-
-url = "http://127.0.0.1:5000/todos"
-database = Getyaml(yamlparam="interface_db", interface=url).port_db()
+if __name__ == "__main__":
+    with open(config_path, 'rb') as f:
+        cont = f.read()                             # 获取yaml文件中的所有信息
+    warnings({'YAMLLoadWarning': False})            # 禁用加载器warnings报警
+    cf = load(cont)                                 # 将bytes格式转成dict格式
+    data = cf.get("interface_db")                   # 获取key为self.yamlparam的value
+    print(data)

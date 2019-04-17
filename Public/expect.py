@@ -16,19 +16,23 @@ def assert_in(asserqiwang, fanhuijson):
         Log().info('填写测试预期值')
         return {"code": 2, 'result': '填写测试预期值'}
 
+# 处理excel表中期望值，转换为字典
 def assertre(asserqingwang):
-    if len(asserqingwang.split('=')) > 1:                                       # 对传参的str通过分隔字符串处理分隔，并判断
-        data = asserqingwang.split('&')                                         # 将传入的字符串转换成list格式： ['code=4001']
-        result = dict([(item.split('=')) for item in data])                     # 将列表转换成字典{'code': '4001'}
-        return result
+    """
+    数据处理方法，通过'='进行分隔将字符串转换成字典格式
+    :param asserqingwang: 传参str：code=201
+    :return:返回字典
+    """
+    if len(asserqingwang.split('=')) > 1:                    # 对传入的asserqingwang值根据'='进行切片 大于1则执行代码
+        data = asserqingwang.split('&')                      # 将参数“code=400”转换成 ['code=400']
+        result = dict([(item.split('=')) for item in data])  # 通过dict方法将[['code=4001']] => {'code': '4001'}
+        return result                                        # 返回字典
     else:
         Log().info('填写测试预期值')
         raise {"code": 1, 'result': '填写测试预期值'}
 
-
-if __name__ == "__main__":
-    asserqingwang = 'code=4001'
-    data = asserqingwang.split('&')
-    print(data)
-    result = dict([(item.split('=')) for item in data])
-    print(result)
+if __name__ =="__main__":
+    from branch.get_excel import makedata
+    data_test = makedata()
+    print(data_test[0]['expect1'])
+    print(data_test[0]['expect1'].split('='))

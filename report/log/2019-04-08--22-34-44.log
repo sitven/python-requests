@@ -1,2 +1,0 @@
-2019-04-08 22:34:44,755 - root - INFO - 测试用例开始执行
-2019-04-08 22:34:44,756 - root - INFO - 获取用例数据:{'url': 'http://127.0.0.1:5000/todos', 'listname': 'get请求返回resultcode正确', 'key': 1.0, 'coneent': 'not argument', 'param_place': '', 'fangshi': 'GET', 'expect1': 'code=200', 'expect2': 'param=null'}

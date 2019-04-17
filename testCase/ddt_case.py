@@ -22,9 +22,9 @@ class MyTest(unittest.TestCase):
         expect_one = dict(assertre(asserqingwang=data_test['expect1']))                 # 获取期望值1
         expect_two = dict(assertre(asserqingwang=data_test['expect2']))                 # 获取期望值2
         data1 = list(expect_two.keys())[0]                                              # 获取期望值2的key，如task
-        Log().info('获取用例数据:%s' % data_test)
+        Log().info('获取用例数据:%s' % data_test)                                       # 获取测试用例数据
         apijson = TestApi(url=data_test['url'], key=data_test['key'], connent=data_test['coneent'],
-                          fangshi=data_test['fangshi'], assertdata=data1,
+                          fangshi=data_test['fangshi'], assertdata=data1,               # 传参期望值的key
                           param_place=data_test['param_place']).testapi()
         Log().info('请求传入数据：url:%s,key:%s,参数:%s,请求方式：%s' % (data_test['url'], data_test['key'],
                                                          data_test['coneent'], data_test['fangshi']))
