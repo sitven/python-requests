@@ -18,15 +18,17 @@ class TestApi(object):
 	def get_param(self):
 		if self.param_place != 'database':		# 非database传参直接返回excel文件中的参数中的
 			return self.connent
-		else:									# 通过yaml文件中的
+		else:
 			# 获取数据库名
 			self.database = Getyaml(yamlparam="interface_db", interface=self.url).port_db()
+			# 通过excel文件中的url匹配yaml文件中key为"interface_db"对应的value来匹配对应获得database名称
 			Log().info('当前接口涉及数据库：%s' % self.database)
 			# 执行数据库操作
-			post_data = Operate_db(self.database, self.url).Perform()
+			post_data = Operate_db(self.database, self.url).Perform()		# 传参数据库名和url
 			Log().info('数据格式为：%s' % post_data)
 			return post_data
 
+	# 根据传参的方式，执行不同请求方法
 	def testapi(self):
 		if self.fangshi == 'POST':
 			# self.parem = {'key': self.key, 'info': self.connent}
