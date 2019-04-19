@@ -8,6 +8,14 @@ reques = requ()
 
 class TestApi(object):
 	def __init__(self, url, key, connent, fangshi, param_place, assertdata):
+		'''
+		:param url: 请求的url
+		:param key: 带的key
+		:param connent: 带的参数
+		:param fangshi: 请求方式
+		:param param_place: 传参地址(database or None)
+		:param assertdata: 期望值2
+		'''
 		self.url = url						# 请求的url
 		self.key = key						# 带的key
 		self.connent = connent				# 带的参数
@@ -15,7 +23,11 @@ class TestApi(object):
 		self.param_place = param_place		# 传参地址(database or None)
 		self.assertdata = assertdata		# 期望值2
 
+	# 获取请求需要的参数
 	def get_param(self):
+		'''
+		:return: 返回请求参数
+		'''
 		if self.param_place != 'database':		# 非database传参直接返回excel文件中的参数中的
 			return self.connent
 		else:
@@ -28,7 +40,7 @@ class TestApi(object):
 			Log().info('数据格式为：%s' % post_data)
 			return post_data
 
-	# 根据传参的方式，执行不同请求方法
+	# 根据传参方式，判断执行对应请求
 	def testapi(self):
 		if self.fangshi == 'POST':
 			# self.parem = {'key': self.key, 'info': self.connent}
