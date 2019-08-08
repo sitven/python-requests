@@ -18,10 +18,10 @@ class TestApi(object):
 		'''
 		self.url = url						# 请求的url
 		self.key = key						# 带的key
-		self.connent = connent				# 带的参数
-		self.fangshi = fangshi				# 请求方式
-		self.param_place = param_place		# 传参地址(database or None)
-		self.assertdata = assertdata		# 期望值2
+		self.connent = connent  				# 带的参数
+		self.fangshi = fangshi	        			# 请求方式
+		self.param_place = param_place	                	# 传参地址(database or None)
+		self.assertdata = assertdata		                # 期望值2
 
 	# 获取请求需要的参数
 	def get_param(self):
@@ -55,7 +55,6 @@ class TestApi(object):
 			self.parem = {'key': self.key, 'info': self.connent}
 			self.response = reques.delfile(self.url, self.get_param())
 		return self.response
-
 
 # def getJson(self):
 # 	json_data = self.testapi()
