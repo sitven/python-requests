@@ -1,8 +1,10 @@
 import os
 import time
 import unittest
-from branch import HTMLTestReportCN
+from basic import HTMLTestReportCN
 from config import globalparam
+from basic import BSTestRunner
+from basic import HTMLTestRunner_cnb
 
 test_dir = "./testCase"
 discover = unittest.defaultTestLoader.discover(test_dir, pattern="*case.py")
@@ -23,12 +25,14 @@ if __name__ == "__main__":
     # Define the report storage path
     filename = globalparam.report_path + "/" + "result.html"
     fp = open(filename, 'wb')
-    #runner = BSTestRunner.BSTestRunner(stream=fp, title='http接口测试报告', description='测试结果')
-    runner = HTMLTestReportCN.HTMLTestRunner(
-        stream=fp,
-        title=u'接口自动化测试报告',
-        # description='详细测试用例结果',    #不传默认为空
-        tester=u"命命"  # 测试人员名字，不传默认为QA
-    )
+    # runner = BSTestRunner.BSTestRunner(stream=fp, title='http接口测试报告', description='测试结果')
+    # runner = HTMLTestRunner_cnb.HTMLTestRunner(stream=fp,title=u'接口自动化测试报告',description='详细测试用例结果'    )
+    runner = HTMLTestReportCN.HTMLTestRunner(stream=fp,
+                                             title=u'接口自动化测试报告',
+                                             description='详细测试用例结果',  # 不传默认为空
+                                             tester=u"stven"  # 测试人员名字，不传默认为QA
+                                             )
+
+
     runner.run(discover)
     fp.close()

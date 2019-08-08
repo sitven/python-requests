@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from branch.log import Log
+from basic.log import Log
 logger = Log()
 
 def assert_in(asserqiwang, fanhuijson):
@@ -32,7 +32,7 @@ def assertre(asserqingwang):
         raise {"code": 1, 'result': '填写测试预期值'}
 
 if __name__ =="__main__":
-    from branch.get_excel import makedata
+    from basic.get_excel import makedata
     data_test = makedata()
     print(data_test[0]['expect1'])
     print(data_test[0]['expect1'].split('='))

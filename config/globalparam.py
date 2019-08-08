@@ -1,7 +1,7 @@
 #coding=utf-8
 import os
 
-from branch.readconfig import ReadConfig
+from basic.readconfig import ReadConfig
 
 # 项目路径参数设置
 prj_path = os.path.split(os.path.split(os.path.realpath(__file__))[0])[0]

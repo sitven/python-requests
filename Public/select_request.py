@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from Public.requests import requ
-from branch.log import Log
-from branch.operate_db import Operate_db
+from basic.log import Log
+from basic.operate_db import Operate_db
 from config.readyaml import Getyaml
 
 reques = requ()

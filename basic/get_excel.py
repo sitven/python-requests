@@ -2,7 +2,7 @@
 
 import os
 import xlrd
-from branch.log import Log
+from basic.log import Log
 from config import globalparam
 
 log_path = globalparam.log_path

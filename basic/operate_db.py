@@ -2,7 +2,7 @@
 
 import os
 import pymysql
-from branch.log import Log
+from basic.log import Log
 from config.readyaml import Getyaml
 
 # 获取当前脚本所在文件夹路径
@@ -41,7 +41,7 @@ class Operate_db():
             # 执行查询语句
             try:
                 self.cursor.execute(sql)
-                results = self.cursor.fetchall()                # 回去查询结果
+                results = self.cursor.fetchall()                # 获取查询结果
                 Log().info('查询结果：%s' % results[0][0])
                 return results[0][0]
             except:
@@ -59,6 +59,6 @@ class Operate_db():
                 raise
         self.db.close()
 
-# interface_url = "http://127.0.0.1:5000/todos/todo2"
-# getdb = "orderdb"
-# Operate_db(getdb,interface_url).Perform()
+interface_url = "http://127.0.0.1:5000/todos/todo2"
+getdb = "orderdb"
+Operate_db(getdb, interface_url).Perform()
